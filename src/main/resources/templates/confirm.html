@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Confirmation Page</title>
+    <comment th:replace="fragments/includes"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header">
+    Header
+</div>
+
+<div>
+    <p>The following products have been confirmed for customer <span th:text="${customer.customerId}">1</span></p>
+    <ul>
+        <li th:each="product : ${products}" th:text="${product.description}">Some Product</li>
+    </ul>
+</div>
+
+<div th:replace="fragments/footer :: footer">
+    Footer
+</div>
+</body>
+</html>

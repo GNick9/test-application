@@ -1,0 +1,17 @@
+#products > div {
+    height:200px;
+    margin-bottom:1em;
+}
+
+#products .panel {
+    height: 100%;
+}
+
+.footer {
+    margin-top:10em;
+}
+
+#checkout {
+    position:absolute;
+    bottom:1em;
+}

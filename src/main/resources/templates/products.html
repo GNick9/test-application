@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sky Products</title>
+    <comment th:replace="fragments/includes"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header">
+    Header
+</div>
+
+<form action="/checkout" method="POST">
+
+<div class="container">
+    <div class="row">
+        <p id="name" th:text="${customer.name}">Name</p>
+    </div>
+
+    <div id="products" class="row">
+        <div th:each="category : ${products.categories}" class="col-md-4 col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" th:text="${category}">Sports</h3>
+                </div>
+                <div class="panel-body">
+                    <div th:each="product : ${products.getProducts(category)}">
+                        <input type="checkbox" th:id="'product' + ${product.productId}" name="products" th:value="${product.productId}"/>
+                        <label th:for="'product' + ${product.productId}" th:text="${product.description}">Product Description</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Basket</h3>
+                </div>
+                <div class="panel-body">
+                     <ul id="basket">
+
+                     </ul>
+                    <button id="checkout" type="submit" class="btn btn-primary" disabled="disabled">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<div th:replace="fragments/footer :: footer">
+    Footer
+</div>
+</body>
+</html>
