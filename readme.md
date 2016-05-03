@@ -1,4 +1,4 @@
-Nicholas Gomm
+Application Details
 =============
 
 A test application for the Sky Technology Unattended Programming Test **Product Selection**
